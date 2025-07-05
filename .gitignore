@@ -1,7 +1,10 @@
 # compiled output
-/dist
-/node_modules
-/build
+/backend/dist
+/backend/node_modules
+/backend/build
+/frontend/dist
+/frontend/node_modules
+/frontend/.vite
 
 # Logs
 logs
@@ -16,8 +19,8 @@ lerna-debug.log*
 .DS_Store
 
 # Tests
-/coverage
-/.nyc_output
+/backend/coverage
+/backend/.nyc_output
 
 # IDEs and editors
 /.idea
@@ -55,4 +58,4 @@ pids
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-/generated/prisma
+/backend/generated/prisma
