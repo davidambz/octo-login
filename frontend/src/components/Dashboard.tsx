@@ -9,12 +9,10 @@ export default function Dashboard() {
   const state = location.state as LocationState;
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h2>Dashboard</h2>
+    <div>
       {state?.token ? (
         <>
-          <p>Token recebido:</p>
-          <code style={{ wordBreak: "break-word" }}>{state.token}</code>
+          <p>Token recebido: {state.token}</p>
         </>
       ) : (
         <p>Nenhum token disponível.</p>
