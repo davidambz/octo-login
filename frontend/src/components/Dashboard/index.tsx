@@ -1,13 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { useLocation } from "react-router-dom";
-import styled from "@emotion/styled";
-
-const Page = styled.div`
-  background-color: #fff;
-    color: #000;
-    width: 100vw;
-    height: 100vh;
-`;
+import { Page } from "./styles";
 
 interface LocationState {
   token?: string;
