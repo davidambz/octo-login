@@ -146,6 +146,31 @@ const Button = styled.button`
   }
 `;
 
+const Checkbox = styled.div`
+  gap: 0.2rem;
+  margin: 0.75rem 0;
+  color: #6e34db;
+  font-size: 0.9rem;
+
+  input[type='checkbox'] {
+    accent-color: #894DF6;
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+  }
+`;
+
+const ForgotPassword = styled.a`
+  display: block;
+  text-align: right;  
+  font-size: 0.9rem;
+  color: #894df6;
+  text-decoration: none;
+  cursor: pointer;
+`
+
 interface LoginResponse {
   access_token?: string;
   message?: string;
@@ -229,7 +254,17 @@ export default function AuthForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <Checkbox>
+                <input
+                  type="checkbox"
+                  id="remember"
+                />
+                <label htmlFor="remember">Remember me?</label>
+              </Checkbox>
               <Button onClick={handleSubmit}>Login</Button>
+              <ForgotPassword href="">
+                Forgot password?
+              </ForgotPassword>
             </FormContainer>
           </FormSide>
           <PurpleSide>
