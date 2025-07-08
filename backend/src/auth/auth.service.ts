@@ -21,10 +21,10 @@ export class AuthService {
     params: Prisma.UserCreateInput,
   ): Promise<{ access_token: string }> {
     const user = await this.userService.user({ email: params.email });
-    if (!user) throw new NotFoundException('User not found');
+    if (!user) throw new NotFoundException('This user is not registered.');
 
     const passwordMatch = await bcrypt.compare(params.password, user.password);
-    if (!passwordMatch) throw new UnauthorizedException('Invalid credentials');
+    if (!passwordMatch) throw new UnauthorizedException('Invalid credentials.');
 
     const payload = { sub: user.id };
 

@@ -7,7 +7,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { Prisma } from '@prisma/client';
+import { UserDto } from 'src/user/dto/user.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -16,7 +16,7 @@ export class AuthController {
 
   @Post()
   @HttpCode(HttpStatus.OK)
-  signin(@Body() Body: Prisma.UserCreateInput) {
+  signin(@Body() Body: UserDto) {
     return this.authService.singin(Body);
   }
 }

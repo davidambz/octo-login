@@ -179,23 +179,30 @@ export default function AuthForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        setErrorMessage(data.message);
+        const message = Array.isArray(data.message)
+          ? data.message[0]
+          : data.message;
+
+        setErrorMessage(message);
         return;
       }
 
       if (isLogin) {
         const loginData = data as LoginResponse;
         if (!loginData.access_token) {
-          setErrorMessage("Erro: token não recebido");
+          setErrorMessage("Token not found");
           return;
         }
         navigate("/dashboard", { state: { token: loginData.access_token } });
       } else {
         setIsLogin(true);
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
-      setErrorMessage("Erro ao conectar com o servidor.");
+      if (err instanceof Error) {
+        setErrorMessage(err.message);
+      } else {
+        setErrorMessage('Erro desconhecido.');
+      }
     }
   };
 
@@ -212,6 +219,7 @@ export default function AuthForm() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <SuportText>{errorMessage}</SuportText>
               <Input
@@ -219,6 +227,7 @@ export default function AuthForm() {
                 placeholder="Senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <Button onClick={handleSubmit}>Login</Button>
             </FormContainer>
@@ -250,6 +259,7 @@ export default function AuthForm() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <SuportText>{errorMessage}</SuportText>
               <Input
@@ -257,6 +267,7 @@ export default function AuthForm() {
                 placeholder="Senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <Button onClick={handleSubmit}>Registrar</Button>
             </FormContainer>
