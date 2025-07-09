@@ -53,6 +53,7 @@ export default function LoginRegisterForm() {
         }
         navigate("/dashboard", { state: { token: loginData.access_token } });
       } else {
+        setErrorMessage(null);
         setIsLogin(true);
       }
     } catch (err) {

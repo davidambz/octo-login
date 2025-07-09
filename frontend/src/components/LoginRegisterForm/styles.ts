@@ -68,6 +68,11 @@ export const SwitchLink = styled.button`
   color: white;
   cursor: pointer;
 
+  &:hover {
+    background-color: #6e34db;
+    border-color: #fff;
+  }
+
   @media (max-width: 480px) {
     width: 100%;
   }
@@ -155,7 +160,6 @@ export const Button = styled.button`
   border: none;
   border-radius: 50px;
   margin-top: 0.5rem;
-  cursor: pointer;
 
   &:hover {
     background-color: #6e34db;
