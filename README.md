@@ -2,14 +2,11 @@
 
 ### Setup environment variables
 
-Rename the file `backend/.env-example` to `.env`:
+Copy the file `backend/.env-example` to `backend/.env`:
 
-```env
-DATABASE_URL="postgres://postgres:postgres@db:5432/octo-login"
-SECRET_KEY="dd1e57b1c9089c5cd27da288c35b07841495337fda01e0b888775e7647982611"
+```bash
+cp backend/.env-example backend/.env
 ```
-
-Make sure to adjust these values if needed.
 
 ### Run the application using Docker
 
