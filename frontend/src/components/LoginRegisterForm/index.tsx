@@ -95,7 +95,7 @@ export default function LoginRegisterForm() {
               <S.ForgotPassword href="">Forgot password?</S.ForgotPassword>
             </S.FormContainer>
           </S.FormSide>
-          <S.PurpleSide>
+          <S.PurpleSide className="login">
             <S.PurpleTitle>New here?</S.PurpleTitle>
             <S.PurpleText>
               Welcome to Octopost. Enter your personal details and start your
@@ -106,7 +106,7 @@ export default function LoginRegisterForm() {
         </>
       ) : (
         <>
-          <S.PurpleSide>
+          <S.PurpleSide className="register">
             <S.PurpleTitle>Welcome back</S.PurpleTitle>
             <S.PurpleText>
               To keep connected with us please login with your personal info

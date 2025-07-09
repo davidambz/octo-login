@@ -1,4 +1,7 @@
 import styled from "@emotion/styled";
+import vectorLogin from "../../assets/images/vector-login.svg";
+import vectorRegister from "../../assets/images/vector-register.svg";
+import logo from "../../assets/logo/logo.png";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -19,6 +22,18 @@ export const PurpleSide = styled.div`
   flex-direction: column;
   background-color: #894df6;
   color: #f4f4f4;
+
+  &.login {
+    background-image: url(${vectorLogin});
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
+  &.register {
+    background-image: url(${vectorRegister});
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
@@ -64,6 +79,10 @@ export const FormSide = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #f4f4f4;
+  background-image: url(${logo});
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-position: 1.5rem 1.5rem;
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
